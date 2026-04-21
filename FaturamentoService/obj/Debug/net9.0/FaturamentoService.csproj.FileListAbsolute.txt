@@ -121,3 +121,4 @@ C:\Projetos\Korp_Teste\FaturamentoService\obj\Debug\net9.0\refint\FaturamentoSer
 C:\Projetos\Korp_Teste\FaturamentoService\obj\Debug\net9.0\FaturamentoService.pdb
 C:\Projetos\Korp_Teste\FaturamentoService\obj\Debug\net9.0\FaturamentoService.genruntimeconfig.cache
 C:\Projetos\Korp_Teste\FaturamentoService\obj\Debug\net9.0\ref\FaturamentoService.dll
+C:\Projetos\Korp_Teste\FaturamentoService\obj\Debug\net9.0\FaturamentoService.sourcelink.json

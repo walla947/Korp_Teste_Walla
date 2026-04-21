@@ -121,3 +121,4 @@ C:\Projetos\Korp_Teste\EstoqueService\obj\Debug\net9.0\refint\EstoqueService.dll
 C:\Projetos\Korp_Teste\EstoqueService\obj\Debug\net9.0\EstoqueService.pdb
 C:\Projetos\Korp_Teste\EstoqueService\obj\Debug\net9.0\EstoqueService.genruntimeconfig.cache
 C:\Projetos\Korp_Teste\EstoqueService\obj\Debug\net9.0\ref\EstoqueService.dll
+C:\Projetos\Korp_Teste\EstoqueService\obj\Debug\net9.0\EstoqueService.sourcelink.json

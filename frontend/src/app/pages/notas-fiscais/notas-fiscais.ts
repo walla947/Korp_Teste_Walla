@@ -58,17 +58,17 @@ export class NotasFiscais implements OnInit {
   adicionarItem() {
     const produto = this.produtos.find(p => p.id === this.produtoSelecionadoId);
     if (!produto) return;
-    this.itens.push({
+    this.itens = [...this.itens, {
       produtoId: produto.id!,
       produtoDescricao: produto.descricao,
       quantidade: this.quantidade
-    });
+    }];
     this.produtoSelecionadoId = 0;
     this.quantidade = 1;
   }
 
   removerItem(index: number) {
-    this.itens.splice(index, 1);
+    this.itens = this.itens.filter((_, i) => i !== index);
   }
 
   criarNota() {
