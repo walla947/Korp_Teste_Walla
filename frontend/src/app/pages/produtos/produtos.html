@@ -1,0 +1,48 @@
+<h2>Cadastro de Produtos</h2>
+
+<mat-card class="form-card">
+  <mat-card-content>
+    <div class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Código</mat-label>
+        <input matInput [(ngModel)]="novoProduto.codigo" placeholder="Ex: 001">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input matInput [(ngModel)]="novoProduto.descricao" placeholder="Ex: Caneta Azul">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Saldo</mat-label>
+        <input matInput type="number" [(ngModel)]="novoProduto.saldo" placeholder="Ex: 100">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="table-card">
+  <mat-card-content>
+    <table mat-table [dataSource]="produtos" class="full-width">
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef>Código</th>
+        <td mat-cell *matCellDef="let p">{{ p.codigo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let p">{{ p.descricao }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="saldo">
+        <th mat-header-cell *matHeaderCellDef>Saldo</th>
+        <td mat-cell *matCellDef="let p">{{ p.saldo }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['codigo','descricao','saldo']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['codigo','descricao','saldo']"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

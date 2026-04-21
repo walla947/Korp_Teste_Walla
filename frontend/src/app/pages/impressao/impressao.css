@@ -1,0 +1,18 @@
+.full-width {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.acoes {
+  margin-top: 24px;
+}
+
+.fechada {
+  color: green;
+  margin-top: 12px;
+}
+
+.erro {
+  color: red;
+  margin-top: 12px;
+}

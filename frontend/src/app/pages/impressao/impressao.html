@@ -1,0 +1,37 @@
+<mat-card *ngIf="nota">
+  <mat-card-content>
+    <h2>Nota Fiscal #{{ nota.numero }}</h2>
+    <p>Status: <strong>{{ nota.status }}</strong></p>
+    <p>Data: {{ nota.dataCriacao | date:'dd/MM/yyyy HH:mm' }}</p>
+
+    <table mat-table [dataSource]="nota.itens" class="full-width">
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>Produto</th>
+        <td mat-cell *matCellDef="let i">{{ i.produtoDescricao }}</td>
+      </ng-container>
+      <ng-container matColumnDef="quantidade">
+        <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+        <td mat-cell *matCellDef="let i">{{ i.quantidade }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['descricao','quantidade']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['descricao','quantidade']"></tr>
+    </table>
+
+    <div class="acoes">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="imprimir()"
+        [disabled]="nota.status !== 'Aberta' || carregando">
+        <span *ngIf="!carregando">🖨️ Imprimir</span>
+        <mat-spinner *ngIf="carregando" diameter="20"></mat-spinner>
+      </button>
+
+      <p *ngIf="nota.status === 'Fechada'" class="fechada">
+        ✅ Nota impressa e fechada!
+      </p>
+
+      <p *ngIf="erro" class="erro">❌ {{ erro }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
