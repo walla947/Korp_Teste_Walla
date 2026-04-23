@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -24,14 +24,20 @@ export class Produtos implements OnInit {
   produtos: Produto[] = [];
   novoProduto: Produto = { codigo: '', descricao: '', saldo: 0 };
 
-  constructor(private produtoService: ProdutoService) {}
+  constructor(
+    private produtoService: ProdutoService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.carregarProdutos();
   }
 
   carregarProdutos() {
-    this.produtoService.getAll().subscribe(data => this.produtos = data);
+    this.produtoService.getAll().subscribe(data => {
+      this.produtos = data;
+      this.cdr.detectChanges();
+    });
   }
 
   salvar() {

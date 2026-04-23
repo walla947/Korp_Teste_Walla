@@ -1,0 +1,15 @@
+.form-card, .table-card {
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.full-width {
+  width: 100%;
+}
